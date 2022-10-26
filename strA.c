@@ -2,27 +2,27 @@
 #include <stdlib.h>
 #include <string.h>
 #include <stdio.h>
-static char EstrategiaA_Organizar_Arreglo (Estrategia const * const me,  char arreglo[5]);
-static char EstrategiaA_print_Arreglo (Estrategia const * const me, char arreglo[5]);
+static char strA_Organizar_ArrDat (str const * const me,  char ArrDat[5]);
+static char strA_print_ArrDat (str const * const me, char ArrDat[5]);
 
-void EstrategiaA_ctor(EstrategiaA * const me, int type, char arreglo[5])
+void strA_ctor(strA * const me, int type, char ArrDat[5])
 {
-    static struct EstrategiaVtb const vtb = {
-        &EstrategiaA_Organizar_Arreglo,
-        &EstrategiaA_print_Arreglo
+    static struct strVtb const vtb = {
+        &strA_Organizar_ArrDat,
+        &strA_print_ArrDat
     };
-    Estrategia_ctor(&me->superclase, 1, arreglo);
-    me->superclase.vptr = &vtb;
+    str_ctor(&me->UnaC, 1, ArrDat);
+    me->UnaC.vptr = &vtb;
 }
 
-char EstrategiaA_print_Arreglo(Estrategia const * const me, char arreglo[5])
+char strA_print_ArrDat(str const * const me, char ArrDat[5])
 {
-    char cadena = EstrategiaA_Organizar_Arreglo(me, arreglo);
-    printf("%s", cadena);
+    char chain = strA_Organizar_ArrDat(me, ArrDat);
+    printf("%s", chain);
 }
 
-char EstrategiaA_Organizar_Arreglo(Estrategia const * const me, char arreglo[5])
+char strA_Organizar_ArrDat(str const * const me, char ArrDat[5])
 {
-    char cadenaorganizada = arreglo[0] + ',' + arreglo[1] + ',' + arreglo[2] + ',' + arreglo[3] + ',' + arreglo[4];
-    return cadenaorganizada;    
+    char chainorganizada = ArrDat[0] + ',' + ArrDat[1] + ',' + ArrDat[2] + ',' + ArrDat[3] + ',' + ArrDat[4];
+    return chainorganizada;    
 }

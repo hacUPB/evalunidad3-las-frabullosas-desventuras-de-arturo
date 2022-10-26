@@ -4,31 +4,31 @@
 #include "str.h"
 #include <assert.h>
 
-static char Organizar_Arreglo(Estrategia const * const me);
-static char print_Arreglo(Estrategia const * const me);
+static char Organizar_ArrDat(str const * const me);
+static char print_ArrDat(str const * const me);
 
-void Estrategia_ctor(Estrategia * const me, int type, char arreglo[5])
+void str_ctor(str * const me, int type, char ArrDat[5])
 {
-    static struct EstrategiaVtb const vtb1 = 
+    static struct strVtb const vtb1 = 
     {
-        &Organizar_Arreglo,
-        &print_Arreglo
+        &Organizar_ArrDat,
+        &print_ArrDat
     };
     me->vptr = &vtb1;
     me->tipo = type;
     for(int i = 0; i<5; i++)
     {
-        me->cadena[i] = arreglo[i]; 
+        me->cadena[i] = ArrDat[i]; 
     }
 }
 
-static char print_Arreglo(Estrategia const * const me)
+static char print_ArrDat(str const * const me)
 {
     assert(0);
     return 0U;
 }
 
-static char Organizar_Arreglo(Estrategia const * const me)
+static char Organizar_ArrDat(str const * const me)
 {
     assert(0);
     return 0U;

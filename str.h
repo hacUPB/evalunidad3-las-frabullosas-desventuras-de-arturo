@@ -17,13 +17,13 @@ struct strVtb
     char (*print)(str const * const me);
 };
 
-void str_ctor(str * const me, int tipo, char arreglo[5] );
+void str_ctor(str * const me, int tipo, char ArrDat[5] );
 
-static inline char Organizar_Arreglo(str const * const me)
+static inline char Organizar_ArrDat(str const * const me)
 {
     (*me->vptr->Organizar)(me);
 }
-static inline char print_Arreglo(str const * const me)
+static inline char print_ArrDat(str const * const me)
 {
     (*me->vptr->print)(me);
 }
