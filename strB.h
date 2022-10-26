@@ -7,5 +7,5 @@ typedef struct
     str dosC;
 }strB;
 
-void strB_ctor(strA * const me, int type, char arreglo[5]);
+void strB_ctor(strA * const me, int type, char ArrDat[5]);
 #endif
